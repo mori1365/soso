@@ -76,3 +76,18 @@ window.onscroll = () =>{
       var cartContainer = document.getElementById('cart-container');
       cartContainer.style.display = 'none';
     }
+
+
+
+    function openLightbox(image) {
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImage = document.getElementById('lightbox-image');
+      
+      lightboxImage.src = image.src;
+      lightbox.style.display = 'flex';
+    }
+    
+    function closeLightbox() {
+      var lightbox = document.getElementById('lightbox');
+      lightbox.style.display = 'none';
+    }
