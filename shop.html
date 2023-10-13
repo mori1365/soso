@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>picture</title>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    .header{
+      width: 100%;
+      padding: 20px;
+      background-color: #ecf4fb;
+      position: fixed;
+      z-index: 1;
+      text-align: center;
+    }
+    .header h1{
+    display: inline;
+    padding: 0px 20px  0px20px;
+    color: #ecf4fb;
+    background-color: rgb(3,61,83);
+    border-radius: 2px;
+    font-weight: 900;
+    text-transform: uppercase;
+    }
+    .container{
+      padding-top: 2rem;
+      background-color: #ecf4fb;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .img-gallery{
+      width: 100%;
+      margin: 5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-rows: minmax(250px, 1fr);
+      gap: 30px;
+    }
+    .img-gallery > img{
+      display: block;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: 0.6s ease;
+      cursor: pointer;
+    }
+    .img-gallery img:hover{
+      scale: 0.85;
+      box-shadow: 10px 20px 60px rgba(68, 77, 136, 0.3);
+    }
+    .full-img{
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .full-img img{
+      width: 80%;
+
+    }
+    .full-img span{
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- header -->
+  <div class="header">
+    <h1>Picture Gallery</h1>
+  </div>
+  <div class="container">
+    <div class="full-img">
+      <div id="fullImgBox">
+        <img src="" id="fullImg" alt="">
+        <span class="cross">X</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    const pictureGallery = () =>{
+      const data = [
+      {
+        id: 1,
+        imgUrl:"./maral/10.jpg"
+      },
+      {
+        id: 2,
+        imgUrl:"./maral/10.jpg"
+      },
+      {
+        id: 3,
+        imgUrl:"./maral/10.jpg"
+      },
+      {
+        id: 4,
+        imgUrl:"./maral/10.jpg"
+      },
+      ];
+      var fullImgBox = document.getElementById("fullImgBox");
+
+      data.forEach((item) =>{
+        console.log(item);
+        let image = document.createElement("img");
+        image.src = `${item.imgUrl}`;
+        image.onclick = function openFullImg(){
+          let fullImg = document.querySelector("#fullImg");
+
+          fullImg.src = this.src;
+          fullImgBox.style.display = "flex";
+        }
+        var cross = document.getElementById("cross");
+        cross.onclick = function closeFullImg(){
+          fullImgBox.style.display = "none"
+        }
+        
+
+        document.querySelector(".img-gallery").appendChild(image);
+      })
+    };
+
+    pictureGallery();
+  </script>
+</body>
+</html>

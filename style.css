@@ -1,73 +1,203 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-:root{
-    --color:gold;
-    --background:#000;
-    --color-hover:#000;
-    --background-hover:gold;
-    --transition:all 0.6s ;
-}
-.header{
+header{
     display: flex;
+    justify-content:space-between;
     width: 100%;
-    justify-content: space-between;
-    background-color: var(--background);
-    padding: 10px 8%;
+    overflow: hidden;
     align-items: center;
-    height: 80px;
-    z-index: 100;
+    height: 10vh;
+    z-index: 1000;
+    overflow: hidden;
+}
+.logo{
+    width: 85px;
+}
+.logo img{
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+.logo img:hover{
+    scale: .85;
+}
+.mysabad{
+    cursor: pointer;
+}
+#menu, .close{
+    display: flex;
+    cursor: pointer;
+    transition: all 0.6s;
+    display: none;
+}
+.menu:hover{
+    rotate: 360deg;
 }
 .navbar{
     display: flex;
-    align-items: center;
-    direction: rtl;
+    overflow: hidden;
+    z-index: 1000;
 }
 .navbar li{
-    position: relative;
     list-style: none;
+    position: relative;
 }
-.navbar li a{
-    color: var(--color);
-    padding: 10px;
+.navbar a{
     text-decoration: none;
+    padding: 15px;
     line-height: 40px;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 650;
+    color: #0D62AB;
     display: block;
-}
-#menu{
-    color: var(--color);
-    font-size: 2rem;
-    cursor: pointer;
-    display: none;
 }
 .head{
     width: 100%;
-    height:850px;
+    height: 800px;
+    display: inline-block;
+    position: relative;
 }
 .head img{
     width: 100%;
     height: 100%;
 }
+.bb{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.bio{
+    position: absolute;
+    top: 40%;
+    right:10%;
+    line-height: 45px;
+    color:#199AE0;
+    background-color:#5C5F61 ;
+    border-radius: 12px;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    transition: all 0.6s ease;
+    cursor: pointer;
+}
+.bio:hover{
+    background-color: #199AE0;
+    color: #5C5F61 ;
+}
+#displayText{
+    color: #297CD2;
+    font-size: 2rem;
+}
+.shop{
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            grid-template-rows: minmax(250px, 1fr);
+            gap: 30px;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    border: 3px solid #0D62AB;
+    border-radius: 10px;
+    box-shadow: 7px 9px 16px 2px #908989;
+    
+}
+.product img{
+    width: 80%;
+}
+.product button{
+    color: blue;
+    background-color: #fff;
+    height: 50px;
+    width: 30%;
+    font-weight: 700;
+    transition: all 0.6s;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1%;
+}
+.product button:hover{
+    color: #fff;
+}
+.product button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.6s;
+}
+.product button:hover::before{
+    width: 100%;
+}
+.cart-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    text-align: center;
+    list-style: none;
+    line-height: 60px;
+    font-size: 3rem;
+    backdrop-filter: blur(6px);
+    z-index: 3000;
+    cursor: pointer;
+  }
+  button img{
+    cursor: pointer;
+  }
 
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
 
-@media(max-width:600px){
+@media (max-width:600px){
     #menu{
         display: block;
     }
     .navbar{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: -50%;
-        right: 0;
-        background-color: var(--background);
-        transition: var(--transition);
+        position:absolute;
+        top:-100%;
+        display: block;
+        height: 350px;
+        right:0px;
+        transition: all 0.6s;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(6px);
     }
-    .navbar.open{
-        top: 9%;
-    }
+
+        
 }

@@ -3,28 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وبسایت مرتضی عابدی</title>
-    <link rel="icon" href="./IMAGE/logo.png">
+    <title>MORTEZA</title>
     <link rel="stylesheet" href="./style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <link rel="icon" href="./IMAGE/logo.png">
 </head>
 <body>
-    <div class="header">
+    <header>
         <div class="logo">
-            <img src=".//IMAGE/logo.png" alt="" width="80px">
+            <img src="./IMAGE/logo.png" alt="">
         </div>
-        <div id="menu"  class='bx bx-menu'></div>
-    <ul class="navbar">
-        <li><a href="#">خانه</a></li>
-        <li><a href="#">کیف</a></li>
-        <li><a href="#">کفش</a></li>
-        <li><a href="#">کمربند</a></li>
-        <li><a href="#">درباره ما</a></li>
-    </ul>
-    </div>
+        <button onclick="showCart()"><img src="./IMAGE/icons8-fast-cart-48.png" alt=""></button>
+        <div class="cart-container" id="cart-container">
+            <span class="close-button" onclick="hideCart()">&times;</span>
+            <h2>سبد خرید</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">مجموع: $0</p>
+          </div>
+        <div class="menu">
+            <div id="menu"><img src="./IMAGE/icons8-menu-48.png" alt=""></div>
+            <div class="close"><img src="./IMAGE/icons8-close-48.png" alt=""></div>
+        </div>
+        <ul class="navbar">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">SHOPING</a></li>
+            <li><a href="#">PICTURES</a></li>
+            <li><a href="#">CART</a></li>
+            <li><a href="#">ABOUT ME</a></li>
+        </ul>
+    </header>
     <div class="head">
         <img src="./maral/10.jpg" alt="">
+        <div class="bb"></div>
+        <div class="bio">
+            <h1>فروشگاه اینترنتی</h1>
+            <h2>محصولات چرمی</h2>
+            <div class="bio2">
+                <h3>محصولات موجود</h3>
+                <h3 id="displayText"></h3>
+            </div>
+        </div>
+    </div>
+    <div class="shop">
+        <div class="product">
+            <img src="./maral/115 (1).jpg" alt="">
+            <h1>کمربند</h1>
+            <h4>5000000ریال</h4>
+            <button onclick="addToCart(1)">افزودن به سبد خرید</button>
+        </div>
+        <div class="product">
+            <img src="./maral/LED (1).jpg" alt="">
+            <h1>جاکلیدی</h1>
+            <h4>2500000ریال</h4>
+            <button onclick="addToCart(2)">افزودن به سبد خرید</button>
+        </div>
+        <div class="product">
+            <img src="./maral/آتریسا-انگوری.jpg" alt="">
+            <h1>آتریسا</h1>
+            <h4>6900000ریال</h4>
+            <button onclick="addToCart(3)">افزودن به سبد خرید</button>
+        </div>
+        <div class="product">
+            <img src="./maral/آدرین.jpg" alt="">
+            <h1>آدرین</h1>
+            <h4>5600000ریال</h4>
+            <button onclick="addToCart(4)">افزودن به سبد خرید</button>
+        </div>
+        <div class="product">
+            <img src="./maral/آریس-سفید.jpg" alt="">
+            <h1>آریس</h1>
+            <h4>3850000ریال</h4>
+            <button onclick="addToCart(5)">افزودن به سبد خرید</button>
+        </div>
+        <div class="product">
+            <img src="./maral/آژمان-کبالت.jpg" alt="">
+            <h1>آژمان</h1>
+            <h4>90000000ریال</h4>
+            <button onclick="addToCart(6)">افزودن به سبد خرید</button>
+        </div>
+        <div class="product">
+            <img src="./maral/توکیو-3.jpg" alt="">
+            <h1>توکیو</h1>
+            <h4>6700000ریال</h4>
+            <button onclick="addToCart(7)">افزودن به سبد خرید</button>
+        </div>
+        <div class="product">
+            <img src="./maral/شیوا.jpg" alt="">
+            <h1>شیوا</h1>
+            <h4>7500000ریال</h4>
+            <button onclick="addToCart(8)">افزودن به سبد خرید</button>
+        </div>
     </div>
     <script src="./script.js"></script>
 </body>
